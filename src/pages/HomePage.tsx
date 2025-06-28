@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
 
   const modules = [
     {
-      title: 'PLC行业认知与基础框架',
+      title: '模块1：PLC行业认知与基础框架',
       description: '学习工业控制器分类、PLC发展历史、品牌竞争格局和典型应用场景',
       icon: <Settings className="w-8 h-8" />,
       path: '/course/automation-industry',
@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&h=250&fit=crop&auto=format'
     },
     {
-      title: 'PLC核心定位与硬件基础', 
+      title: '模块2：PLC核心定位与硬件基础', 
       description: '掌握PLC高可靠性与实时性特性、扫描循环原理和硬件最小系统',
       icon: <Cpu className="w-8 h-8" />,
       path: '/course/plc-basics',
@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&h=250&fit=crop&auto=format'
     },
     {
-      title: '电气接线与信号认知',
+      title: '模块3：电气接线与信号认知',
       description: '学习I/O接线规范、两线制三线制传感器接线和信号类型辨析',
       icon: <Zap className="w-8 h-8" />,
       path: '/course/io-wiring',
@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=400&h=250&fit=crop&auto=format'
     },
     {
-      title: '梯形图编程',
+      title: '模块4：梯形图编程',
       description: '掌握五大基础指令、起保停电路构建和电气机械互锁实现',
       icon: <Monitor className="w-8 h-8" />,
       path: '/course/ladder-diagram',
@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop&auto=format'
     },
     {
-      title: '程序开发与调试',
+      title: '模块5：程序开发与调试',
       description: '熟练使用TIA Portal进行工程创建、程序编写和调试技能',
       icon: <Target className="w-8 h-8" />,
       path: '/course/tia-portal',
@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400&h=250&fit=crop&auto=format'
     },
     {
-      title: '安全强化模块',
+      title: '模块6：安全强化模块',
       description: '强化电气安全与编程安全知识，掌握漏电保护和急停设计',
       icon: <Award className="w-8 h-8" />,
       path: '/course/safety',
@@ -86,7 +86,7 @@ const HomePage: React.FC = () => {
   ];
 
   return (
-    <main className="relative z-10 px-6 pb-12">
+    <main className="relative z-10 py-8">
       {/* Hero Section */}
       <section className="mb-16 text-center">
         <div className="relative backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 md:p-12 overflow-hidden">
@@ -161,10 +161,55 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Course Content Overview */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">课程内容概述</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">🏭 PLC行业认知与基础框架</h3>
+              <p className="text-white/80 text-sm leading-relaxed">
+                工业控制器的定义、核心作用、分类对比及PLC的发展历史、主要品牌、中国竞争格局和典型应用场景认知
+              </p>
+            </div>
+            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">🔧 PLC核心定位与硬件基础</h3>
+              <p className="text-white/80 text-sm leading-relaxed">
+                PLC的高可靠性与实时性核心特性、扫描循环工作原理、硬件最小系统的CPU、电源、I/O模块组成及急停电路独立硬接线的安全规范基础
+              </p>
+            </div>
+            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">⚡ 电气接线与信号认知</h3>
+              <p className="text-white/80 text-sm leading-relaxed">
+                I/O接线的两线制/三线制传感器接线规范、熔断器选型原则、继电器隔离方法及数字信号状态判定阈值和模拟信号概念辨析
+              </p>
+            </div>
+            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">📋 梯形图编程</h3>
+              <p className="text-white/80 text-sm leading-relaxed">
+                梯形图编程的常开触点、常闭触点、输出线圈、TON定时器、计数器五大基础指令，起保停电路构建及电气与机械互锁的实现方式
+              </p>
+            </div>
+            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">💻 程序开发与调试</h3>
+              <p className="text-white/80 text-sm leading-relaxed">
+                TIA Portal工程创建、梯形图编写、下载监控的基础操作，以及变量强制修改和CPU状态指示灯诊断的调试技能
+              </p>
+            </div>
+            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">🛡️ 安全强化模块</h3>
+              <p className="text-white/80 text-sm leading-relaxed">
+                漏电保护原理、安全电压等级的电气安全知识，双线圈冲突后果及急停梯形图设计禁忌的编程安全内容
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Course Overview */}
       <section className="mb-16">
         <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl mb-8 p-8">
-          <h2 className="text-3xl font-bold text-white mb-4 text-center">课程概览</h2>
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">学习模块</h2>
           <p className="text-white/80 text-center max-w-3xl mx-auto">
             系统性学习PLC控制技术，从基础概念到实际应用，培养工业自动化核心能力
           </p>

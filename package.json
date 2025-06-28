@@ -2,22 +2,25 @@
   "name": "plc-education-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://YOUR_USERNAME.github.io/plc-education-web",
   "dependencies": {
     "@types/node": "^16.18.68",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "react-router-dom": "^6.20.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,8 +42,9 @@
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
-    "tailwindcss": "^3.3.6",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32"
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
   }
-} 
+}

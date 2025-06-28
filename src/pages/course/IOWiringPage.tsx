@@ -159,7 +159,7 @@ const IOWiringPage: React.FC = () => {
   ];
 
   return (
-    <main className="relative z-10 px-6 pb-12">
+    <main className="relative z-10 py-8">
       {/* 页面标题 */}
       <section className="mb-12">
         <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl text-center p-8">
@@ -386,6 +386,358 @@ const IOWiringPage: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 理论基础与概念解析 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">理论基础与概念解析</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            深入理解I/O接线规范、信号类型和安全规范的核心概念
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* I/O接线规范详解 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">I/O接线规范详解</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-blue-300 mb-4">两线制传感器接线</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">接线方式</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 两根导线：电源线 + 信号线</li>
+                      <li>• 电源线连接PLC的+24V端子</li>
+                      <li>• 信号线连接PLC的DI模块输入端子</li>
+                      <li>• 传感器和电源串联连接</li>
+                    </ul>
+                  </div>
+                  <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-4">
+                    <p className="text-blue-200 text-sm">
+                      <strong>接线实例：</strong>两线制接近开关，红色线连接PLC的+24V端子，黑色线连接PLC的DI模块输入端子X0。优点是接线简单，需要注意电源容量。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-green-300 mb-4">三线制传感器接线</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">接线方式</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 三根导线：+电源线、-电源线、信号线</li>
+                      <li>• +24V电源线连接传感器+端子</li>
+                      <li>• -24V电源线连接传感器-端子</li>
+                      <li>• 信号线连接PLC的DI模块输入端子</li>
+                    </ul>
+                  </div>
+                  <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-4">
+                    <p className="text-green-200 text-sm">
+                      <strong>接线实例：</strong>三线制光电传感器，红色线连接+24V，蓝色线连接-24V，黑色线连接DI模块输入端子X1。抗干扰能力强，电源和信号分开。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 熔断器选型与继电器隔离 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">熔断器选型与继电器隔离</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-purple-300 mb-4">熔断器选型原则</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">选型依据</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 根据电路额定电流选择熔断器</li>
+                      <li>• 熔断器额定电流略大于电路正常工作电流</li>
+                      <li>• 安装在电源进线端</li>
+                      <li>• 过流故障时熔断器熔断切断电路</li>
+                    </ul>
+                  </div>
+                  <div className="bg-purple-900/20 border border-purple-600/30 rounded-lg p-4">
+                    <p className="text-purple-200 text-sm">
+                      <strong>选型实例：</strong>电路正常工作电流为5A，选择额定电流为6A的熔断器。当电路发生过流故障时，熔断器会熔断切断电路。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-orange-300 mb-4">继电器隔离方法</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">隔离原理</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 防止外部电路干扰影响PLC</li>
+                      <li>• 通过继电器隔离PLC内外部电路</li>
+                      <li>• 外部信号输入时继电器线圈得电</li>
+                      <li>• 触点闭合将信号传输到PLC</li>
+                    </ul>
+                  </div>
+                  <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-4">
+                    <p className="text-orange-200 text-sm">
+                      <strong>应用实例：</strong>PLC控制电机时，通过继电器将PLC的DO模块与电机驱动电路隔离，防止电机强电干扰影响PLC正常工作。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 信号类型辨析 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">信号类型辨析</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-red-300 mb-4">数字信号：状态判定阈值</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">数字信号特点</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 只有两种状态：0和1、开和关</li>
+                      <li>• 需要设定状态判定阈值区分两种状态</li>
+                      <li>• 高于阈值为1状态（高电平）</li>
+                      <li>• 低于阈值为0状态（低电平）</li>
+                    </ul>
+                  </div>
+                  <div className="bg-red-900/20 border border-red-600/30 rounded-lg p-4">
+                    <p className="text-red-200 text-sm">
+                      <strong>应用案例：</strong>接近开关输出信号，物体靠近时为高电平，远离时为低电平。需要将PLC的DI模块输入阈值设置为合适值，准确检测接近开关状态。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-cyan-300 mb-4">模拟信号概念引入</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">模拟信号特点</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 在时间和数值上都连续变化</li>
+                      <li>• 如温度、压力、电流、电压等</li>
+                      <li>• 需要通过AI模块转换为数字信号</li>
+                      <li>• 考虑信号量程、精度等因素</li>
+                    </ul>
+                  </div>
+                  <div className="bg-cyan-900/20 border border-cyan-600/30 rounded-lg p-4">
+                    <p className="text-cyan-200 text-sm">
+                      <strong>应用案例：</strong>温度控制系统中，温度传感器输出模拟电压信号，通过AI模块转换为数字信号，PLC根据数字信号调节加热设备功率，实现精确温度控制。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 技术要点与操作方法 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">技术要点与操作方法</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            掌握信号处理原理和接线操作的核心技术要点
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-white mb-4">信号处理原理</h3>
+            <div className="space-y-4">
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-blue-300 font-semibold mb-2">数字信号处理要点</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 状态判定阈值设置对信号识别的重要性</li>
+                  <li>• 正确设置阈值避免信号误判</li>
+                  <li>• 确保PLC能够准确接收输入信号</li>
+                </ul>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-green-300 font-semibold mb-2">模拟信号处理要点</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 掌握AI模块工作原理和参数设置</li>
+                  <li>• 根据模拟信号实际范围设置量程</li>
+                  <li>• 选择合适精度的AI模块满足控制需求</li>
+                </ul>
+              </div>
+              <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-4">
+                <p className="text-green-200 text-sm">
+                  <strong>关键技术：</strong>设置AI模块量程时，需要根据模拟信号的实际范围进行设置，保证转换后的数字信号能够准确对应模拟信号的数值。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-white mb-4">接线操作技巧</h3>
+            <div className="space-y-4">
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-purple-300 font-semibold mb-2">接线规范性要求</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 严格按照接线规范进行连接</li>
+                  <li>• 确保电源线和信号线连接正确</li>
+                  <li>• 使用合适的接线端子和导线</li>
+                </ul>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-orange-300 font-semibold mb-2">元器件选型要点</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 熔断器选型避免过大或过小</li>
+                  <li>• 继电器触点连接确保可靠</li>
+                  <li>• 防止松动导致接触不良</li>
+                </ul>
+              </div>
+              <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-4">
+                <p className="text-orange-200 text-sm">
+                  <strong>操作要点：</strong>接线过程中要保证接线牢固，防止松动导致接触不良。选择合适的接线端子和导线规格，确保连接可靠性。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 实践应用与操作要点 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">实践应用与操作要点</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            通过实际操作步骤掌握传感器接线和元器件选型技能
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* 传感器接线实践步骤 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">两线制/三线制传感器接线实践步骤</h3>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-blue-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">1</div>
+                <h4 className="text-lg font-semibold text-white mb-3">准备工具和材料</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 螺丝刀、导线</li>
+                  <li>• 两线制传感器</li>
+                  <li>• 三线制传感器</li>
+                  <li>• 接线端子</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-green-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">2</div>
+                <h4 className="text-lg font-semibold text-white mb-3">连接两线制传感器</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 一根导线连接PLC的+24V端子</li>
+                  <li>• 另一根导线连接DI模块输入端子</li>
+                  <li>• 例：接近开关红线接+24V，黑线接X0</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-purple-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">3</div>
+                <h4 className="text-lg font-semibold text-white mb-3">连接三线制传感器</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• +24V电源线连接PLC的+24V端子</li>
+                  <li>• -24V电源线连接PLC的-24V端子</li>
+                  <li>• 信号线连接DI模块输入端子</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-orange-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">4</div>
+                <h4 className="text-lg font-semibold text-white mb-3">检查接线</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 检查接线是否正确</li>
+                  <li>• 确保连接牢固</li>
+                  <li>• 无松动或短路现象</li>
+                  <li>• 测试传感器工作状态</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 熔断器选型与继电器隔离实践 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">熔断器选型与继电器隔离实践步骤</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-blue-300 mb-4">熔断器选型实践</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">确定电路参数</h5>
+                      <p className="text-white/80 mb-2">确定需要保护的电路的额定电流。</p>
+                      <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-3">
+                        <p className="text-blue-200 text-sm">例：电机驱动电路额定电流为4A</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">选择熔断器</h5>
+                      <p className="text-white/80 mb-2">根据电路额定电流，选择额定电流略大于4A的熔断器。</p>
+                      <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-3">
+                        <p className="text-green-200 text-sm">选择5A额定电流的熔断器</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">安装熔断器</h5>
+                      <p className="text-white/80">将熔断器安装在电路的电源进线端。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-orange-300 mb-4">继电器隔离实践</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">选择继电器</h5>
+                      <p className="text-white/80 mb-2">选择合适规格的继电器。</p>
+                      <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-3">
+                        <p className="text-orange-200 text-sm">根据控制电流和电压等级选择</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">连接继电器线圈</h5>
+                      <p className="text-white/80 mb-2">继电器线圈一端连接PLC的DO模块输出端子，另一端连接电源。</p>
+                      <div className="bg-red-900/20 border border-red-600/30 rounded-lg p-3">
+                        <p className="text-red-200 text-sm">例：线圈连接DO模块Y0</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">连接继电器触点</h5>
+                      <p className="text-white/80">将继电器触点串联到外部设备控制电路中，检查触点连接可靠性。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

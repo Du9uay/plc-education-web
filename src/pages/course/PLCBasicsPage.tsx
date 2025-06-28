@@ -184,7 +184,7 @@ const PLCBasicsPage: React.FC = () => {
   ];
 
   return (
-    <main className="relative z-10 px-6 pb-12">
+    <main className="relative z-10 py-8">
       {/* 页面标题 */}
       <section className="mb-12">
         <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl text-center p-8">
@@ -390,6 +390,474 @@ const PLCBasicsPage: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 理论基础与概念解析 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">理论基础与概念解析</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            深入理解PLC的核心特性和工作原理
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* PLC核心特性详解 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">PLC的核心特性</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-blue-300 mb-4">高可靠性保障</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">硬件保障措施</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 硬件冗余设计，关键部件双备份</li>
+                      <li>• 软件容错技术，自动故障恢复</li>
+                      <li>• 抗干扰设计，有效抵御电磁干扰</li>
+                      <li>• 过压、过流保护，防止设备损坏</li>
+                    </ul>
+                  </div>
+                  <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-4">
+                    <p className="text-blue-200 text-sm">
+                      <strong>工业应用：</strong>PLC的电源模块具有过压、过流保护功能，CPU模块采用抗干扰设计，能够在恶劣工业环境下长时间稳定运行。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-green-300 mb-4">实时性保障</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">实时响应能力</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 快速响应输入信号变化</li>
+                      <li>• 及时输出控制信号驱动执行机构</li>
+                      <li>• 扫描周期通常在毫秒级别</li>
+                      <li>• 保证生产流程的连续性和稳定性</li>
+                    </ul>
+                  </div>
+                  <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-4">
+                    <p className="text-green-200 text-sm">
+                      <strong>实际案例：</strong>在自动化生产线上，当传感器检测到物料到达指定位置时，PLC需要在极短时间内发出指令控制机械臂抓取，保证生产流程连续性。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 扫描循环工作原理详解 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">扫描循环工作原理深入分析</h3>
+            <div className="space-y-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-white mb-4">完整扫描流程</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">1</span>
+                    </div>
+                    <h5 className="text-blue-300 font-semibold mb-2">内部处理</h5>
+                    <p className="text-white/70 text-xs">自诊断、与编程设备通信</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">2</span>
+                    </div>
+                    <h5 className="text-green-300 font-semibold mb-2">输入采样</h5>
+                    <p className="text-white/70 text-xs">读取所有输入端子状态</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">3</span>
+                    </div>
+                    <h5 className="text-purple-300 font-semibold mb-2">程序执行</h5>
+                    <p className="text-white/70 text-xs">按序扫描执行梯形图程序</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">4</span>
+                    </div>
+                    <h5 className="text-orange-300 font-semibold mb-2">输出刷新</h5>
+                    <p className="text-white/70 text-xs">更新输出锁存器状态</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-4">
+                <h5 className="text-yellow-200 font-semibold mb-2">实际应用案例分析</h5>
+                <p className="text-yellow-100 text-sm leading-relaxed">
+                  <strong>点动控制程序示例：</strong>当输入端子接收到启动信号时，输入采样阶段会将该信号状态存入输入映像寄存器，程序执行阶段会根据梯形图逻辑使输出线圈得电，输出刷新阶段则将输出状态通过输出端子驱动接触器线圈，从而实现电机的点动控制。整个扫描循环在极短时间内完成，保证控制的实时性。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 硬件最小系统深入解析 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">硬件最小系统深入解析</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-blue-300 mb-4">CPU模块详解</h4>
+                <ul className="space-y-3 text-white/80 text-sm">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>负责执行用户程序、处理数据和通信</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>是PLC系统的核心大脑</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>控制整个系统的工作流程</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-green-300 mb-4">电源模块详解</h4>
+                <ul className="space-y-3 text-white/80 text-sm">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>为PLC提供稳定的工作电源</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>通常有交流和直流两种类型</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>具备过压过流保护功能</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-purple-300 mb-4">I/O模块详解</h4>
+                <ul className="space-y-3 text-white/80 text-sm">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>DI模块接收外部输入信号</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>DO模块输出控制信号</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>实现PLC与外部设备的连接</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 技术要点与操作方法 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">技术要点与操作方法</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            掌握PLC特性分析、硬件选型和配置的核心技术要点
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-white mb-4">PLC特性分析与应用</h3>
+            <div className="space-y-4">
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-blue-300 font-semibold mb-2">高可靠性特性分析</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 硬件：多层板设计和表面贴装技术提高抗干扰能力</li>
+                  <li>• 软件：故障自诊断功能，及时发现并提示PLC内部故障</li>
+                  <li>• 应用：对可靠性要求极高的场景优先选择高可靠性PLC</li>
+                </ul>
+              </div>
+              <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-4">
+                <p className="text-green-200 text-sm">
+                  <strong>实际应用指导：</strong>在核电站控制等对可靠性要求极高的工业场景中，需要选择具有高可靠性的PLC产品，并通过定期维护和检测来确保其稳定运行。
+                </p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-purple-300 font-semibold mb-2">实时性保障分析</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 根据具体的控制周期来选择合适性能的PLC</li>
+                  <li>• 高速运动控制场景需要选择扫描速度快的PLC</li>
+                  <li>• 满足实时响应要求是关键技术指标</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-white mb-4">硬件选型方法</h3>
+            <div className="space-y-4">
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-orange-300 font-semibold mb-2">CPU性能要求确定</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 简单逻辑控制：选择运算速度较慢、内存容量较小的CPU</li>
+                  <li>• 复杂运动控制：需要运算速度快、内存容量大的CPU</li>
+                  <li>• 根据控制需求确定运算速度、内存容量等参数</li>
+                </ul>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="text-red-300 font-semibold mb-2">I/O模块选择</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 根据DI/DO点数估算结果选择合适的I/O模块</li>
+                  <li>• 确保I/O模块点数能够满足实际需求</li>
+                  <li>• 考虑电源模块功率是否满足整个系统供电需求</li>
+                </ul>
+              </div>
+              <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-4">
+                <p className="text-blue-200 text-sm">
+                  <strong>选型示例：</strong>需要检测10个输入信号、控制5个输出设备的控制系统，选择CPU模块时要考虑其运算能力，I/O模块要确保DI点数至少为10，DO点数至少为5，电源模块功率要能够为整个系统提供稳定电源。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 实践应用与操作要点 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">实践应用与操作要点</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            通过实际操作步骤掌握PLC硬件连接和模块配置技能
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* PLC硬件连接实操步骤 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">PLC硬件连接实操步骤</h3>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-blue-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">1</div>
+                <h4 className="text-lg font-semibold text-white mb-3">确定硬件配置</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 根据控制需求确定CPU模块型号</li>
+                  <li>• 选择合适的电源模块</li>
+                  <li>• 确定I/O模块的型号和数量</li>
+                </ul>
+                <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-2 mt-3">
+                  <p className="text-blue-200 text-xs">
+                    控制5个输出设备和8个输入设备的系统配置示例
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-green-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">2</div>
+                <h4 className="text-lg font-semibold text-white mb-3">安装硬件</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 将各模块安装到PLC机架上</li>
+                  <li>• 确保安装牢固可靠</li>
+                  <li>• 按照机架安装说明正确操作</li>
+                </ul>
+                <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-2 mt-3">
+                  <p className="text-green-200 text-xs">
+                    将各个模块正确插入对应的插槽
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-purple-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">3</div>
+                <h4 className="text-lg font-semibold text-white mb-3">进行接线</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 输入设备信号线连接DI模块</li>
+                  <li>• 输出设备控制线连接DO模块</li>
+                  <li>• 电源模块电源线连接PLC电源端子</li>
+                </ul>
+                <div className="bg-purple-900/20 border border-purple-600/30 rounded-lg p-2 mt-3">
+                  <p className="text-purple-200 text-xs">
+                    按照I/O接线规范进行正确连接
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <div className="w-12 h-12 bg-orange-500 text-white rounded-lg flex items-center justify-center mb-4 font-bold">4</div>
+                <h4 className="text-lg font-semibold text-white mb-3">通电测试</h4>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• 接通PLC电源</li>
+                  <li>• 观察电源模块指示灯状态</li>
+                  <li>• 检查CPU模块运行指示灯</li>
+                </ul>
+                <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-2 mt-3">
+                  <p className="text-orange-200 text-xs">
+                    指示灯正常说明硬件连接基本正确
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 模块配置实践步骤 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">模块配置实践步骤</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">打开编程软件</h4>
+                    <p className="text-white/80 mb-3">打开TIA Portal等PLC编程软件，创建一个新的工程项目。</p>
+                    <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-3">
+                      <p className="text-blue-200 text-sm">确保软件版本与PLC硬件兼容</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">添加硬件</h4>
+                    <p className="text-white/80 mb-3">在软件中添加所需的CPU模块、电源模块和I/O模块。</p>
+                    <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-3">
+                      <p className="text-green-200 text-sm">通过硬件配置界面选择相应模块型号</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">配置模块参数</h4>
+                    <p className="text-white/80 mb-3">对添加的模块进行参数配置，包括DI/DO模块的点数设置、电源模块的电压设置等。</p>
+                    <div className="bg-purple-900/20 border border-purple-600/30 rounded-lg p-3">
+                      <p className="text-purple-200 text-sm">设置DI模块8个输入点，DO模块5个输出点</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">下载配置到PLC</h4>
+                    <p className="text-white/80 mb-3">将配置好的硬件参数下载到PLC中，使PLC按照配置的硬件进行工作。</p>
+                    <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-3">
+                      <p className="text-orange-200 text-sm">通过下载功能将硬件配置文件传输到PLC</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 理论基础与概念解析 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">理论基础与概念解析</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            深入理解PLC的核心特性和工作原理
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* PLC核心特性详解 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">PLC的核心特性</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-blue-300 mb-4">高可靠性保障</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">硬件保障措施</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 硬件冗余设计，关键部件双备份</li>
+                      <li>• 软件容错技术，自动故障恢复</li>
+                      <li>• 抗干扰设计，有效抵御电磁干扰</li>
+                      <li>• 过压、过流保护，防止设备损坏</li>
+                    </ul>
+                  </div>
+                  <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-4">
+                    <p className="text-blue-200 text-sm">
+                      <strong>工业应用：</strong>PLC的电源模块具有过压、过流保护功能，CPU模块采用抗干扰设计，能够在恶劣工业环境下长时间稳定运行。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-green-300 mb-4">实时性保障</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">实时响应能力</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 快速响应输入信号变化</li>
+                      <li>• 及时输出控制信号驱动执行机构</li>
+                      <li>• 扫描周期通常在毫秒级别</li>
+                      <li>• 保证生产流程的连续性和稳定性</li>
+                    </ul>
+                  </div>
+                  <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-4">
+                    <p className="text-green-200 text-sm">
+                      <strong>实际案例：</strong>在自动化生产线上，当传感器检测到物料到达指定位置时，PLC需要在极短时间内发出指令控制机械臂抓取，保证生产流程连续性。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 扫描循环工作原理详解 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">扫描循环工作原理深入分析</h3>
+            <div className="space-y-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-white mb-4">完整扫描流程</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">1</span>
+                    </div>
+                    <h5 className="text-blue-300 font-semibold mb-2">内部处理</h5>
+                    <p className="text-white/70 text-xs">自诊断、与编程设备通信</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">2</span>
+                    </div>
+                    <h5 className="text-green-300 font-semibold mb-2">输入采样</h5>
+                    <p className="text-white/70 text-xs">读取所有输入端子状态</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">3</span>
+                    </div>
+                    <h5 className="text-purple-300 font-semibold mb-2">程序执行</h5>
+                    <p className="text-white/70 text-xs">按序扫描执行梯形图程序</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold">4</span>
+                    </div>
+                    <h5 className="text-orange-300 font-semibold mb-2">输出刷新</h5>
+                    <p className="text-white/70 text-xs">更新输出锁存器状态</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-4">
+                <h5 className="text-yellow-200 font-semibold mb-2">实际应用案例分析</h5>
+                <p className="text-yellow-100 text-sm leading-relaxed">
+                  <strong>点动控制程序示例：</strong>当输入端子接收到启动信号时，输入采样阶段会将该信号状态存入输入映像寄存器，程序执行阶段会根据梯形图逻辑使输出线圈得电，输出刷新阶段则将输出状态通过输出端子驱动接触器线圈，从而实现电机的点动控制。整个扫描循环在极短时间内完成，保证控制的实时性。
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

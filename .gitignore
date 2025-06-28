@@ -26,4 +26,12 @@ yarn-error.log*
 .idea/
 
 # OS
-Thumbs.db 
+Thumbs.db
+
+# Cache
+.cache/
+*.tsbuildinfo
+
+# Archives
+*.tar.gz
+*.zip 

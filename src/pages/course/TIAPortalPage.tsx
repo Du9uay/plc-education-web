@@ -243,7 +243,7 @@ const TIAPortalPage: React.FC = () => {
   ];
 
   return (
-    <main className="relative z-10 px-6 pb-12">
+    <main className="relative z-10 py-8">
       {/* 页面标题 */}
       <section className="mb-12">
         <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl text-center p-8">
@@ -530,6 +530,589 @@ const TIAPortalPage: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 理论基础与概念解析 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">理论基础与概念解析</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            深入了解TIA Portal软件的核心功能和程序调试的基本原理
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* TIA Portal软件介绍 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">TIA Portal软件介绍</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-blue-300 mb-4">软件概述与特点</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">TIA Portal全称</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• Totally Integrated Automation Portal</li>
+                      <li>• 全集成自动化门户</li>
+                      <li>• 西门子公司开发的自动化工程软件</li>
+                      <li>• 涵盖硬件配置、编程、调试、诊断</li>
+                    </ul>
+                  </div>
+                  <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-4">
+                    <p className="text-blue-200 text-sm">
+                      <strong>集成优势：</strong>TIA Portal提供了一个统一的工程环境，从硬件配置到程序开发，从仿真测试到在线诊断，所有功能都在一个平台上完成，大大提高了工程效率。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-green-300 mb-4">主要功能模块</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">核心功能</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 硬件配置：设备选型、参数设置</li>
+                      <li>• 编程开发：梯形图、SCL、FBD等</li>
+                      <li>• 仿真调试：离线仿真、在线监控</li>
+                      <li>• 诊断维护：故障诊断、系统优化</li>
+                    </ul>
+                  </div>
+                  <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-4">
+                    <p className="text-green-200 text-sm">
+                      <strong>实际应用：</strong>在TIA Portal中，可以通过项目树清晰地管理整个工程，从PLC硬件配置到HMI画面设计，每个组件都有专门的编辑器和工具支持。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 程序调试原理 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">程序调试原理</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-purple-300 mb-4">调试概念与目的</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">调试的基本概念</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 验证程序逻辑是否正确</li>
+                      <li>• 检查程序运行是否符合预期</li>
+                      <li>• 发现并修复程序中的错误</li>
+                      <li>• 优化程序性能和效率</li>
+                    </ul>
+                  </div>
+                  <div className="bg-purple-900/20 border border-purple-600/30 rounded-lg p-4">
+                    <p className="text-purple-200 text-sm">
+                      <strong>调试重要性：</strong>程序调试是确保工业控制系统安全可靠运行的关键环节，通过系统的调试过程可以避免生产事故和设备损坏。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-orange-300 mb-4">调试方法与工具</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">常用调试工具</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 在线监控：实时查看变量状态</li>
+                      <li>• 断点调试：暂停程序执行</li>
+                      <li>• 强制变量：手动修改变量值</li>
+                      <li>• 监控表：批量监视多个变量</li>
+                    </ul>
+                  </div>
+                  <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-4">
+                    <p className="text-orange-200 text-sm">
+                      <strong>调试策略：</strong>采用分步调试方法，先验证基本功能，再测试复杂逻辑，逐步缩小问题范围，快速定位故障原因。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 bg-white/5 rounded-lg p-6">
+              <h4 className="text-xl font-semibold text-cyan-300 mb-4">调试流程与步骤</h4>
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-bold">1</span>
+                  </div>
+                  <h5 className="text-cyan-300 font-semibold mb-2">程序编译</h5>
+                  <p className="text-white/70 text-xs">检查语法错误，生成可执行代码</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-bold">2</span>
+                  </div>
+                  <h5 className="text-green-300 font-semibold mb-2">程序下载</h5>
+                  <p className="text-white/70 text-xs">将程序传输到PLC中运行</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-bold">3</span>
+                  </div>
+                  <h5 className="text-yellow-300 font-semibold mb-2">在线监控</h5>
+                  <p className="text-white/70 text-xs">实时观察程序运行状态</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-red-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-bold">4</span>
+                  </div>
+                  <h5 className="text-red-300 font-semibold mb-2">问题修复</h5>
+                  <p className="text-white/70 text-xs">分析问题并修改程序</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 技术要点与操作方法 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">技术要点与操作方法</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            掌握TIA Portal的核心操作技巧和调试方法
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* 软件操作方法 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">软件操作方法</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-xl font-semibold text-blue-300 mb-4">界面布局与导航</h4>
+                <ul className="space-y-3 text-white/80 text-sm">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>项目树：管理所有硬件和软件组件</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>工作区：编辑程序和配置参数</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>属性窗口：设置对象属性</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>输出窗口：显示编译和诊断信息</span>
+                  </li>
+                </ul>
+                <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-3 mt-4">
+                  <p className="text-blue-200 text-xs">
+                    <strong>操作技巧：</strong>熟练使用快捷键和右键菜单，可以大大提高操作效率。
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-xl font-semibold text-green-300 mb-4">项目管理技巧</h4>
+                <ul className="space-y-3 text-white/80 text-sm">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>创建项目：选择合适的控制器类型</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>版本管理：定期保存项目版本</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>备份恢复：建立完善的备份机制</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>文档管理：添加注释和说明文档</span>
+                  </li>
+                </ul>
+                <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-3 mt-4">
+                  <p className="text-green-200 text-xs">
+                    <strong>最佳实践：</strong>使用有意义的命名规则，建立清晰的项目结构。
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-xl font-semibold text-purple-300 mb-4">程序编辑技巧</h4>
+                <ul className="space-y-3 text-white/80 text-sm">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>指令库：熟悉常用指令的位置</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>拖拽编程：直接拖拽指令到编辑器</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>复制粘贴：复用程序块和逻辑</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>查找替换：批量修改变量名称</span>
+                  </li>
+                </ul>
+                <div className="bg-purple-900/20 border border-purple-600/30 rounded-lg p-3 mt-4">
+                  <p className="text-purple-200 text-xs">
+                    <strong>编程规范：</strong>保持代码风格一致，添加必要的注释说明。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 程序编译与下载操作方法 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">程序编译与下载操作方法</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-red-300 mb-4">编译操作详解</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">编译过程</h5>
+                    <ol className="space-y-2 text-white/80 text-sm">
+                      <li>1. 语法检查：检查程序的语法错误</li>
+                      <li>2. 逻辑分析：分析程序逻辑结构</li>
+                      <li>3. 资源分配：为变量分配内存地址</li>
+                      <li>4. 代码生成：生成可执行的机器代码</li>
+                    </ol>
+                  </div>
+                  <div className="bg-red-900/20 border border-red-600/30 rounded-lg p-4">
+                    <h5 className="text-red-200 font-semibold mb-2">编译命令</h5>
+                    <div className="text-red-200 text-sm font-mono bg-black/30 rounded p-2">
+                      Ctrl + Shift + F7 或点击"编译"按钮
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">!</div>
+                      <span className="text-white/80 text-sm">编译错误会在输出窗口显示详细信息</span>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">⚠</div>
+                      <span className="text-white/80 text-sm">警告信息需要仔细检查并处理</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold text-orange-300 mb-4">下载操作详解</h4>
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="text-white font-semibold mb-2">下载前准备</h5>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• 确保PLC与电脑正确连接</li>
+                      <li>• 检查通信设置是否正确</li>
+                      <li>• 确认PLC处于STOP状态</li>
+                      <li>• 保存当前项目文件</li>
+                    </ul>
+                  </div>
+                  <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-4">
+                    <h5 className="text-orange-200 font-semibold mb-2">下载步骤</h5>
+                    <ol className="space-y-1 text-orange-200 text-sm">
+                      <li>1. 点击"下载到设备"按钮</li>
+                      <li>2. 选择目标PLC设备</li>
+                      <li>3. 选择下载内容（程序、数据等）</li>
+                      <li>4. 确认下载并等待完成</li>
+                    </ol>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">✓</div>
+                      <span className="text-white/80 text-sm">下载成功后会显示确认消息</span>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">i</div>
+                      <span className="text-white/80 text-sm">可以选择下载后自动启动PLC</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 在线监控与调试技巧 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">在线监控与调试技巧</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-cyan-300 mb-4">监控表使用技巧</h4>
+                <div className="space-y-3">
+                  <div className="text-white/80 text-sm">
+                    <strong>创建监控表：</strong>
+                    <p className="text-xs mt-1">添加需要监控的变量到监控表中，可以实时查看变量值的变化</p>
+                  </div>
+                  <div className="text-white/80 text-sm">
+                    <strong>强制变量：</strong>
+                    <p className="text-xs mt-1">手动设置变量值，测试程序在不同条件下的响应</p>
+                  </div>
+                  <div className="text-white/80 text-sm">
+                    <strong>触发条件：</strong>
+                    <p className="text-xs mt-1">设置触发条件，只在特定情况下更新监控值</p>
+                  </div>
+                </div>
+                <div className="bg-cyan-900/20 border border-cyan-600/30 rounded-lg p-3 mt-4">
+                  <p className="text-cyan-200 text-xs">
+                    监控表是调试过程中最常用的工具，建议创建多个监控表分类管理不同类型的变量。
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-yellow-300 mb-4">在线编辑技巧</h4>
+                <div className="space-y-3">
+                  <div className="text-white/80 text-sm">
+                    <strong>在线修改：</strong>
+                    <p className="text-xs mt-1">在程序运行时直接修改程序逻辑，无需停止PLC</p>
+                  </div>
+                  <div className="text-white/80 text-sm">
+                    <strong>测试功能：</strong>
+                    <p className="text-xs mt-1">使用测试功能模拟输入信号，验证程序响应</p>
+                  </div>
+                  <div className="text-white/80 text-sm">
+                    <strong>比较功能：</strong>
+                    <p className="text-xs mt-1">比较在线程序与离线程序的差异</p>
+                  </div>
+                </div>
+                <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-3 mt-4">
+                  <p className="text-yellow-200 text-xs">
+                    在线编辑功能强大，但需要谨慎使用，避免在生产过程中进行危险的修改。
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-indigo-300 mb-4">诊断功能应用</h4>
+                <div className="space-y-3">
+                  <div className="text-white/80 text-sm">
+                    <strong>设备诊断：</strong>
+                    <p className="text-xs mt-1">检查PLC硬件状态和模块通信情况</p>
+                  </div>
+                  <div className="text-white/80 text-sm">
+                    <strong>程序诊断：</strong>
+                    <p className="text-xs mt-1">分析程序执行时间和资源使用情况</p>
+                  </div>
+                  <div className="text-white/80 text-sm">
+                    <strong>通信诊断：</strong>
+                    <p className="text-xs mt-1">检查网络通信状态和数据传输质量</p>
+                  </div>
+                </div>
+                <div className="bg-indigo-900/20 border border-indigo-600/30 rounded-lg p-3 mt-4">
+                  <p className="text-indigo-200 text-xs">
+                    定期使用诊断功能可以提前发现潜在问题，确保系统稳定运行。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 实践应用与操作要点 */}
+      <section className="mb-16">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">实践应用与操作要点</h2>
+          <p className="text-white/80 text-center max-w-3xl mx-auto">
+            通过实际操作掌握TIA Portal的程序开发和调试流程
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* 程序开发实践步骤 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">程序开发实践步骤</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-blue-300 mb-4">项目创建与配置</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">启动TIA Portal</h5>
+                      <p className="text-white/80 text-sm mb-2">打开TIA Portal软件，选择"创建新项目"。</p>
+                      <div className="bg-blue-900/20 border border-blue-600/30 rounded-lg p-3">
+                        <p className="text-blue-200 text-sm">选择合适的项目模板和PLC型号，设置项目名称和存储路径。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">硬件配置</h5>
+                      <p className="text-white/80 text-sm mb-2">在项目树中配置PLC硬件，添加所需的I/O模块。</p>
+                      <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-3">
+                        <p className="text-green-200 text-sm">根据实际硬件配置添加CPU、数字量模块、模拟量模块等。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">变量定义</h5>
+                      <p className="text-white/80 text-sm mb-2">创建PLC变量表，定义输入、输出和内部变量。</p>
+                      <div className="bg-purple-900/20 border border-purple-600/30 rounded-lg p-3">
+                        <p className="text-purple-200 text-sm">使用有意义的变量名，设置正确的数据类型和注释。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-orange-300 mb-4">程序编写与测试</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">编写程序逻辑</h5>
+                      <p className="text-white/80 text-sm mb-2">在Main程序块中编写控制逻辑，使用梯形图或其他编程语言。</p>
+                      <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-3">
+                        <p className="text-orange-200 text-sm">按功能模块组织程序结构，保持代码清晰易读。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">5</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">程序编译</h5>
+                      <p className="text-white/80 text-sm mb-2">编译程序检查语法错误，修复发现的问题。</p>
+                      <div className="bg-red-900/20 border border-red-600/30 rounded-lg p-3">
+                        <p className="text-red-200 text-sm">仔细查看编译信息，解决所有错误和重要警告。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">6</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">仿真测试</h5>
+                      <p className="text-white/80 text-sm mb-2">使用PLCSIM仿真器测试程序逻辑是否正确。</p>
+                      <div className="bg-indigo-900/20 border border-indigo-600/30 rounded-lg p-3">
+                        <p className="text-indigo-200 text-sm">通过仿真可以在没有实际硬件的情况下验证程序功能。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 程序调试实践步骤 */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">程序调试实践步骤</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-cyan-300 mb-4">调试环境准备</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">建立通信连接</h5>
+                      <p className="text-white/80 text-sm mb-2">配置通信接口，建立电脑与PLC的连接。</p>
+                      <div className="bg-cyan-900/20 border border-cyan-600/30 rounded-lg p-3">
+                        <p className="text-cyan-200 text-sm">检查以太网或PROFIBUS连接，确保通信正常。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">下载程序</h5>
+                      <p className="text-white/80 text-sm mb-2">将编译好的程序下载到PLC中运行。</p>
+                      <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-3">
+                        <p className="text-yellow-200 text-sm">选择适当的下载选项，确保程序正确传输。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">启动PLC</h5>
+                      <p className="text-white/80 text-sm mb-2">将PLC切换到RUN状态，开始执行程序。</p>
+                      <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-3">
+                        <p className="text-green-200 text-sm">观察PLC状态指示灯，确认程序正常运行。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-red-300 mb-4">在线调试操作</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">创建监控表</h5>
+                      <p className="text-white/80 text-sm mb-2">添加关键变量到监控表，实时观察变量状态。</p>
+                      <div className="bg-red-900/20 border border-red-600/30 rounded-lg p-3">
+                        <p className="text-red-200 text-sm">分类创建监控表：输入信号、输出信号、内部变量等。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">5</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">功能测试</h5>
+                      <p className="text-white/80 text-sm mb-2">测试各个控制功能，验证程序逻辑是否正确。</p>
+                      <div className="bg-purple-900/20 border border-purple-600/30 rounded-lg p-3">
+                        <p className="text-purple-200 text-sm">使用强制变量功能模拟不同的输入条件。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">6</div>
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-2">问题排查</h5>
+                      <p className="text-white/80 text-sm mb-2">发现问题时，使用调试工具定位和解决问题。</p>
+                      <div className="bg-orange-900/20 border border-orange-600/30 rounded-lg p-3">
+                        <p className="text-orange-200 text-sm">分析程序执行流程，检查逻辑错误和参数设置。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-6">
+              <h4 className="text-yellow-200 font-semibold mb-3">调试过程中的注意事项</h4>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className="text-white font-semibold mb-2">安全注意事项</h5>
+                  <ul className="space-y-1 text-yellow-100 text-sm">
+                    <li>• 调试前确保系统处于安全状态</li>
+                    <li>• 谨慎使用强制变量功能</li>
+                    <li>• 避免在生产过程中进行危险操作</li>
+                    <li>• 保持急停按钮随时可用</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="text-white font-semibold mb-2">调试技巧</h5>
+                  <ul className="space-y-1 text-yellow-100 text-sm">
+                    <li>• 分步骤验证程序功能</li>
+                    <li>• 记录调试过程和发现的问题</li>
+                    <li>• 保存调试前的程序版本</li>
+                    <li>• 与团队成员分享调试经验</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

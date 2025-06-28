@@ -108,7 +108,7 @@ const CareersPage: React.FC = () => {
   ];
 
   return (
-    <main className="relative z-10 px-6 pb-12">
+    <main className="relative z-10 py-8">
       {/* Hero Section */}
       <section className="mb-16 text-center">
         <div className="relative backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 md:p-12 overflow-hidden">

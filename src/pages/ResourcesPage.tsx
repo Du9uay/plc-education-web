@@ -292,7 +292,7 @@ const ResourcesPage: React.FC = () => {
   ];
 
   return (
-    <main className="relative z-10 px-6 pb-12">
+    <main className="relative z-10 py-8">
       {/* 页面标题 */}
       <section className="mb-12">
         <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl text-center p-8">
