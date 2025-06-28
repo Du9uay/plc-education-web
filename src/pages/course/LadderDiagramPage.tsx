@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Settings, 
-  Cpu, 
-  Clock,
+  Cpu,
   Target,
   CheckCircle,
   ArrowRight,
   Zap,
-  Monitor,
-  Eye
+  Monitor
 } from '../../components/Icons';
 
 const LadderDiagramPage: React.FC = () => {

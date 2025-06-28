@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Users, 
   Award, 
   CheckCircle,
   Target,
   BookOpen,
   Settings,
   Cpu,
-  Zap,
-  ArrowRight
+  Zap
 } from '../components/Icons';
 
 const CareersPage: React.FC = () => {

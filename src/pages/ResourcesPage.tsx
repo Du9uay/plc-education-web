@@ -7,8 +7,7 @@ import {
   Target,
   CheckCircle,
   ArrowRight,
-  Cpu,
-  Zap
+  Cpu
 } from '../components/Icons';
 
 const ResourcesPage: React.FC = () => {

@@ -5,7 +5,6 @@ import {
   Settings,
   Cpu,
   Monitor,
-  Zap,
   CheckCircle,
   ArrowRight,
   Award,

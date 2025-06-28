@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Target,
   CheckCircle,
-  Settings,
-  Cpu,
-  Zap,
-  Monitor,
-  Eye,
   ArrowRight,
   Award,
   BookOpen
@@ -28,7 +22,6 @@ const CourseTestPage: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{[key: number]: any}>({});
   const [showResults, setShowResults] = useState(false);
-  const [testCompleted, setTestCompleted] = useState(false);
   
   // 连线题状态
   const [connections, setConnections] = useState<{[key: string]: string}>({});
@@ -37,7 +30,7 @@ const CourseTestPage: React.FC = () => {
   // 配对题状态
   const [matches, setMatches] = useState<{[key: string]: string}>({});
 
-  const questions: Question[] = [
+  const questions: Question[] = useMemo(() => [
     {
       id: 1,
       type: 'choice',
@@ -97,7 +90,7 @@ const CourseTestPage: React.FC = () => {
       answer: {'常开触点': 'B. 触点闭合时允许电流通过', '常闭触点': 'C. 触点断开时允许电流通过', 'TON定时器': 'A. 延时接通定时器指令'},
       explanation: '常开触点在闭合时导通，常闭触点在断开时导通，TON是延时接通定时器指令。'
     }
-  ];
+  ], []);
 
   // 在题目切换时重置状态
   useEffect(() => {
@@ -357,7 +350,6 @@ const CourseTestPage: React.FC = () => {
                   setShowResults(false);
                   setCurrentQuestion(0);
                   setAnswers({});
-                  setTestCompleted(false);
                 }}
                 className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-8 py-3 text-white font-medium flex items-center space-x-2 hover:scale-105 transition-transform"
               >
